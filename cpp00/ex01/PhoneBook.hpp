@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-int	main(int argc, char **argv)
+# include <string>
+# include <iostream>
+# include "Contact.hpp"
+
+class PhoneBook
 {
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			std::cout << static_cast<char>(std::toupper(argv[i][j]));
-		}
-	}
-	std::cout << "\n";
-	return 0;
-}
+	private:
+		Contact contacts[8];
+		int		i;
+		bool	full;
+
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
+		void addContact();
+
+};
+
+#endif

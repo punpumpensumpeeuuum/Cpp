@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.hpp"
 
-int	main(int argc, char **argv)
+PhoneBook::PhoneBook()
 {
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			std::cout << static_cast<char>(std::toupper(argv[i][j]));
-		}
-	}
-	std::cout << "\n";
-	return 0;
+	i = 0;
+	full = false;
+}
+
+PhoneBook::~PhoneBook()
+{
 }
