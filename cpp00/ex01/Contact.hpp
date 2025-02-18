@@ -6,7 +6,7 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 22:05:06 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/02/10 22:05:06 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:26:03 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,18 @@ class Contact
 
 		enum Book
 		{
-			Firstname = 0,
-			Lastname,
-			Nickname,
-			Phonenumber,
-			Darksecret
+			FirstName = 0,
+			LastName,
+			NickName,
+			PhoneNumber,
+			DarkestSecret
 		};
 
 	public:
 		Contact(void);
 		~Contact(void);
 
+		void	set_contact();
 };
 
 #endif
