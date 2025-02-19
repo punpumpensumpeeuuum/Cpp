@@ -14,5 +14,9 @@
 
 int		main(void)
 {
+	Contact myContact;
+
+	myContact.set_contact();
+	myContact.display_contact(0);
 	return 0;
 }

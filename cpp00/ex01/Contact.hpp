@@ -13,8 +13,10 @@
 #ifndef CONTACT_H
 # define CONTACT_H
 
-# include <string>
 # include <iostream>
+# include <iomanip>
+# include <string>
+# include <cstdlib>
 
 class Contact
 {
@@ -36,6 +38,8 @@ class Contact
 		~Contact(void);
 
 		void	set_contact();
+		void display_contact(int index) const;
+
 };
 
 #endif

@@ -16,7 +16,7 @@ std::string Contact::inputs[5] =
 {
 	"First Name" ,
 	"Last Name" ,
-	"Nickname" ,
+	"NickName" ,
 	"Phone Number" ,
 	"Darkest Secret"
 };
@@ -24,7 +24,7 @@ std::string Contact::inputs[5] =
 Contact::Contact()
 {
 	for (int i = FirstName; i <= DarkestSecret; i++)
-		inputs[i] = std::string();
+		info[i] = "";
 	return;
 }
 
@@ -36,7 +36,25 @@ void	Contact::set_contact()
 {
 	for(int i = FirstName; i <= DarkestSecret; i++)
 	{
-		std::cout << "Enter the " << Contact::inputs[i] << ":\n";
-		// get the input form the terminal   std::getline??? n sei		
+		std::string name;
+		std::cout << "Enter the " << Contact::inputs[i] << ": ";
+		std::getline(std::cin , name);
+		if (!name.empty())
+			info[i] = name;
+		
 	}
+}
+
+void Contact::display_contact(int index) const
+{
+	std::cout << "|Contact n" << index;
+	for(int i = FirstName; i <= DarkestSecret; i++)
+	{
+		std::cout << "|";
+		if (info[i].length() > 10)
+			std::cout << info[i].substr(0, 9) << ".";
+		else
+			std::cout << std::setw(10) << std::left << info[i];
+	}
+	std::cout << "|" << std::endl;
 }
