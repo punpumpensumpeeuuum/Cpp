@@ -6,7 +6,7 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 22:05:06 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/02/18 18:26:03 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:55:47 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Contact
 		~Contact(void);
 
 		void		set_contact();
-		void		display_contact(int index) const;
 		std::string	get_info(int index) const;
+		std::string	get_book(int index) const;
 };
 
 #endif
