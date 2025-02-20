@@ -37,11 +37,18 @@ void	Contact::set_contact()
 	for(int i = FirstName; i <= DarkestSecret; i++)
 	{
 		std::string name;
-		std::cout << "Enter the " << Contact::inputs[i] << ": ";
-		std::getline(std::cin , name);
-		if (!name.empty())
-			info[i] = name;
-		
+		while (true)
+		{
+			std::cout << "Enter the " << Contact::inputs[i] << ": ";
+			std::getline(std::cin , name);
+			if (!name.empty())
+			{
+				info[i] = name;
+				break;			
+			}
+			std::cout << "Need to write something" << std::endl;
+		}
+
 	}
 }
 
@@ -57,4 +64,9 @@ void Contact::display_contact(int index) const
 			std::cout << std::setw(10) << std::left << info[i];
 	}
 	std::cout << "|" << std::endl;
+}
+
+std::string Contact::get_info(int i) const
+{
+	return info[i];
 }

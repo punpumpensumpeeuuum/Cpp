@@ -37,9 +37,9 @@ class Contact
 		Contact(void);
 		~Contact(void);
 
-		void	set_contact();
-		void display_contact(int index) const;
-
+		void		set_contact();
+		void		display_contact(int index) const;
+		std::string	get_info(int index) const;
 };
 
 #endif

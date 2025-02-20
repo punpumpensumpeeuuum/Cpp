@@ -27,7 +27,8 @@ class PhoneBook
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void addContact();
+		void	addContact();
+		void	displayContacts() const;
 
 };
 

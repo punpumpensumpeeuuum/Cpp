@@ -14,9 +14,21 @@
 
 int		main(void)
 {
-	Contact myContact;
+	PhoneBook	phonebook;
+	std::string	command;
+	bool		runnig = true;
 
-	myContact.set_contact();
-	myContact.display_contact(0);
+	while (runnig)
+	{
+		std::cout << "Enter command: ";
+		std::getline(std::cin, command);
+		if (command == "ADD")
+			phonebook.addContact();
+		if (command == "SEARCH")
+			phonebook.displayContacts();
+		if (command == "EXIT")
+			runnig = false;
+		command.clear();
+	}
 	return 0;
 }
