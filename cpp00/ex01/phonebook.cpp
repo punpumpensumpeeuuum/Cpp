@@ -76,7 +76,7 @@ void	PhoneBook::displayContacts() const
 		if (!number.empty() && std::isdigit(number[0]) && number.length() == 1)
 		{
 			int	truenumber = number[0] - '1';
-			if (truenumber >= 0 && truenumber < 8)
+			if (truenumber >= 0 && truenumber < i)
 			{
 				for (int i = 0; i < 5; i++)
 					std::cout << contacts[truenumber].get_book(i) << " > " << contacts[truenumber].get_info(i) << std::endl;

@@ -37,6 +37,7 @@ class Contact
 		Contact(void);
 		~Contact(void);
 
+		bool		only_spaces(const std::string& str);
 		void		set_contact();
 		std::string	get_info(int index) const;
 		std::string	get_book(int index) const;

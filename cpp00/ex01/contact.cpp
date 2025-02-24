@@ -32,6 +32,16 @@ Contact::~Contact()
 {
 }
 
+bool	Contact::only_spaces(const std::string& str)
+{
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (str[i] != ' ')
+			return false;
+	}
+	return true;
+}
+
 void	Contact::set_contact()
 {
 	for(int i = FirstName; i <= DarkestSecret; i++)
@@ -46,7 +56,7 @@ void	Contact::set_contact()
 				exit(0);
 			for (size_t c = 0; c < name.length(); c++)
 			{
-				if (!std::isprint(name[c]))
+				if (!std::isprint(name[c]) || only_spaces(name))
 				{
 					valido = false;
 					break;
@@ -55,7 +65,7 @@ void	Contact::set_contact()
 			if (!name.empty() && valido)
 			{
 				info[i] = name;
-				break;		
+				break;
 			}
 			std::cout << "Need to write something" << std::endl;
 		}
