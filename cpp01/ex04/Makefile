@@ -1,5 +1,5 @@
-NAME = Unnecessary_violence
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+NAME = Sed_is_for_losers
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
