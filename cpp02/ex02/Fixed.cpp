@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:13:06 by buddy2            #+#    #+#             */
-/*   Updated: 2025/03/03 03:33:16 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/03/03 17:12:15 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,62 @@ float	Fixed::operator*(Fixed fixed) const
 float	Fixed::operator/(Fixed fixed) const
 {
 	return (toFloat() / fixed.toFloat());
+}
+
+Fixed	Fixed::operator++()
+{
+	value++;
+	return (value);
+}
+
+Fixed	Fixed::operator--()
+{
+	value--;
+	return (value);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	++value;
+	return (value);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	--value;
+	return (value);
+}
+
+Fixed	&Fixed::min(Fixed &first, Fixed &second)
+{
+	if (first.toFloat() <= second.toFloat())
+		return (first);
+	else
+		return (second);
+}
+
+const Fixed	&Fixed::min(const Fixed &first, const Fixed &second)
+{
+	if (first.toFloat() <= second.toFloat())
+		return (first);
+	else
+		return (second);
+}
+
+Fixed	&Fixed::max(Fixed &first, Fixed &second)
+{
+	if (first.toFloat() >= second.toFloat())
+		return (first);
+	else
+		return (second);
+}
+
+const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
+{
+	if (first.toFloat() >= second.toFloat())
+		return (first);
+	else
+		return (second);
 }
 
 int		Fixed::getRawBits() const

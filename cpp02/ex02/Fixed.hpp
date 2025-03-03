@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 19:18:47 by buddy2            #+#    #+#             */
-/*   Updated: 2025/03/02 22:53:30 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/03/03 16:41:08 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ class Fixed
 		Fixed	operator--();
 		Fixed	operator++(int);
 		Fixed	operator--(int);
+		
+		static Fixed &min(Fixed &first, Fixed &second);
+		static const Fixed &min(Fixed const &first, Fixed const &second);
+		static Fixed &max(Fixed &first, Fixed &second);
+		static const Fixed &max(Fixed const &first, const Fixed &second);
 		
 		int		getRawBits(void)const;
 		void	setRawBits(int const raw);
