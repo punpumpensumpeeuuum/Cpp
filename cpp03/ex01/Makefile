@@ -1,5 +1,5 @@
 NAME = OPEN
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScrapTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
