@@ -1,4 +1,4 @@
-NAME = OPEN
+NAME = Serena
 SRCS = main.cpp ClapTrap.cpp ScrapTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 

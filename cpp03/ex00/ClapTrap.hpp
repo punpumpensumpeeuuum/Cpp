@@ -6,7 +6,7 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 19:18:47 by buddy2            #+#    #+#             */
-/*   Updated: 2025/03/04 15:48:05 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:11:27 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ class Claptrap
 {
 	private:
 		std::string			name;
-		int	unsigned		hp;
-		int	unsigned		energy;
-		int	unsigned		ad;
+		unsigned int		hp;
+		unsigned int		energy;
+		unsigned int		ad;
 	public:
 		Claptrap();
 		Claptrap(std::string n);
+		Claptrap(const Claptrap &copy);
+		Claptrap &operator=(const Claptrap &src);
 		~Claptrap();
 
 		void	attack(const std::string&	target);

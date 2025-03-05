@@ -6,7 +6,7 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:13:06 by buddy2            #+#    #+#             */
-/*   Updated: 2025/03/04 17:56:04 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:12:53 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,25 @@ Claptrap::Claptrap(): name("Random"), hp(10), energy(10), ad(0)
 Claptrap::Claptrap(std::string n): name(n), hp(10), energy(10), ad(0)
 {
 	std::cout << "ClapTrap Constructor for the name " << name << " called" << std::endl;
+}
+
+Claptrap::Claptrap(const Claptrap &copy)
+{
+	std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	*this = copy;
+}
+
+Claptrap &Claptrap::operator=(const Claptrap &copy)
+{
+	std::cout << "ClapTrap Assignation operator called" << std::endl;
+	if (this != &copy)
+	{
+		name = copy.name;
+		hp = copy.hp;
+		energy = copy.energy;
+		ad = copy.ad;
+	}
+	return (*this);
 }
 
 Claptrap::~Claptrap()

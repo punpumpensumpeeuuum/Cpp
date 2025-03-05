@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScravTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 18:02:54 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/03/04 18:03:50 by dinda-si         ###   ########.fr       */
+/*   Created: 2025/03/04 18:02:33 by dinda-si          #+#    #+#             */
+/*   Updated: 2025/03/05 18:32:14 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCRAVTRAP_H
-# define SCRAVTRAP_H
+#include "ScravTrap.hpp"
 
-# include <iostream>
-# include <string>
-
-class ScavTrap
+Scavtrap::Scavtrap(): Claptrap()
 {
-	private:
-		std::string			name;
-		int	unsigned		hp;
-		int	unsigned		energy;
-		int	unsigned		ad;
-	public:
-		
-};
-
-#endif
+	hp = 100;
+	energy = 50;
+	ad = 20;
+	guardmode = false;
+	std::cout << "ScavTrap Default Constructor called" << std::endl;
+}
