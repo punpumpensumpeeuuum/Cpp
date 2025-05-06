@@ -93,28 +93,27 @@ float	Fixed::operator/(Fixed fixed) const
 	return (toFloat() / fixed.toFloat());
 }
 
-Fixed	Fixed::operator++()
-{
-	value++;
-	return (value);
-}
-
-Fixed	Fixed::operator--()
-{
-	value--;
-	return (value);
-}
-
 Fixed	Fixed::operator++(int)
 {
-	++value;
-	return (value);
+	Fixed	temp = *this;
+	this->value++;
+	return (temp);
 }
-
-Fixed	Fixed::operator--(int)
+Fixed Fixed::operator++()
 {
-	--value;
-	return (value);
+	this->value++;
+	return (*this);
+}
+Fixed Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+	this->value--;
+	return (temp);
+}
+Fixed Fixed::operator--()
+{
+	this->value--;
+	return (*this);
 }
 
 Fixed	&Fixed::min(Fixed &first, Fixed &second)
