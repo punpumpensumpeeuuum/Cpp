@@ -20,7 +20,7 @@
 class Fragtrap: public Claptrap
 {
 	private:
-
+		
 	public:
 		Fragtrap();
 		Fragtrap(std::string n);

@@ -51,3 +51,15 @@ Fragtrap::~Fragtrap()
 {
 	std::cout << "Fragtrap Deconstructor for " << name << " called" << std::endl;
 }
+
+void	Fragtrap::highFivesGuys(void)
+{
+	std::string ans;
+
+	std::cout << this->name << " wants a high five!";
+	std::getline(std::cin, ans);
+	if (ans.empty())
+		std::cout << ":D" << std::endl;
+	else
+		std::cout << ":C" << std::endl;
+}

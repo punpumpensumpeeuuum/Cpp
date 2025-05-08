@@ -99,18 +99,18 @@ Fixed	Fixed::operator++(int)
 	this->value++;
 	return (temp);
 }
-Fixed Fixed::operator++()
+Fixed	Fixed::operator++()
 {
 	this->value++;
 	return (*this);
 }
-Fixed Fixed::operator--(int)
+Fixed	Fixed::operator--(int)
 {
 	Fixed	temp = *this;
 	this->value--;
 	return (temp);
 }
-Fixed Fixed::operator--()
+Fixed	Fixed::operator--()
 {
 	this->value--;
 	return (*this);
