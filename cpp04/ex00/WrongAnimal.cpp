@@ -6,7 +6,7 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 18:22:18 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/05/08 18:33:39 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:26:04 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ WrongAnimal::WrongAnimal()
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
 	std::cout << "Wrong Animal Copy Constructor called" << std::endl;
-	this->name = copy.name;
+	this->name = copy.getType();
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &copy)

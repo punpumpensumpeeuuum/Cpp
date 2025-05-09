@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 18:20:32 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/05/09 11:25:57 by dinda-si         ###   ########.fr       */
+/*   Created: 2025/02/22 19:18:47 by buddy2            #+#    #+#             */
+/*   Updated: 2025/05/09 11:33:00 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog()
+Animal::Animal()
 {
-	name = "Dog";	
-	std::cout << "🐕WOOF🐕 Default Dog Constructor called" << std::endl;
+	name = "Animal";	
+	std::cout << "Default Animal Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy)
+Animal::Animal(const Animal &copy)
 {
-	std::cout << "🐕WOOF🐕 Dog Copy Constructor called" << std::endl;
+	std::cout << "Animal Copy Constructor called" << std::endl;
 	this->name = copy.getType();
 }
 
-Dog &Dog::operator=(const Dog &copy)
+Animal &Animal::operator=(const Animal &copy)
 {
 	if (this != &copy)
 		this->name = copy.name;
 	return (*this);
 }
 
-Dog::~Dog()
+Animal::~Animal()
 {
-	std::cout << "🐕WOOF🐕 Dog was destroyed" << std::endl;
+	std::cout << "Animal was destroyed" << std::endl;
 }
 
-void	Dog::makeSound() const
+void	Animal::makeSound() const
 {
-	std::cout << "🐕WOOF🐕WOOF🐕WOOF🐕WOOF🐕WOOF🐕" << std::endl;
+	std::cout << "Random wild noises" << std::endl;
 }
 
-std::string	Dog::getType() const
+std::string	Animal::getType() const
 {
 	return(this->name);
 }
