@@ -6,12 +6,12 @@
 /*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:20:31 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/10/15 01:29:45 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/16 01:24:54 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): name("Random"), grade(150)
 {
@@ -107,7 +107,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 	return ("Grade too high!");
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	form.beSinged(*this);
 	if (form.getSign())
