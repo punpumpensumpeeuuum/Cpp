@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 03:05:45 by buddy2            #+#    #+#             */
-/*   Updated: 2025/10/16 03:08:18 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:37:24 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class RobotomyRequestForm : public AForm
 		~RobotomyRequestForm();
 
 		std::string		getTarget() const;
+		
+		void	execute( Bureaucrat const & executor ) const;
 };
 
 #endif

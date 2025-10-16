@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 17:09:27 by buddy2            #+#    #+#             */
-/*   Updated: 2025/10/16 01:17:53 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:12:58 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,9 @@ const char* AForm::GradeTooLowException::what() const throw()
 const char* AForm::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high!");
+}
+
+const char* AForm::FormNotSigned::what() const throw()
+{
+	return ("Form not signed!");
 }

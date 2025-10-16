@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 01:26:05 by buddy2            #+#    #+#             */
-/*   Updated: 2025/10/16 03:08:21 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:37:15 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 
 		std::string		getTarget() const;
+		
+		void	execute( Bureaucrat const & executor ) const;
 };
 
 #endif

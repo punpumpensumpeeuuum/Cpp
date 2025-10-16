@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:20:29 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/10/16 01:27:45 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:10:13 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ class AForm
 		bool		getSign() const;
 		int			getSiGrade() const;
 		int			getExGrade() const;
-		virtual void	beSinged(const Bureaucrat& bureaucrat) = 0;
-		virtual void	execute(Bureaucrat const & executor) = 0;
+		void		beSinged(const Bureaucrat& bureaucrat);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception 
 	{
@@ -44,6 +44,11 @@ class AForm
 			virtual const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception 
+	{
+		public:
+			virtual const char* what() const throw();
+	};
+	class FormNotSigned : public std::exception 
 	{
 		public:
 			virtual const char* what() const throw();

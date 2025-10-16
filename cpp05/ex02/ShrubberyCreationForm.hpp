@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 03:08:12 by buddy2            #+#    #+#             */
-/*   Updated: 2025/10/16 03:08:46 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:37:17 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 
 		std::string		getTarget() const;
+		
+		void	execute( Bureaucrat const & executor ) const;
 };
 
 #endif
