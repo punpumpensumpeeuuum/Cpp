@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:09:52 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/10/22 22:25:58 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/10/23 16:31:01 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <stdlib.h>
 
 ScalarConverter::ScalarConverter()
 {}
@@ -64,7 +65,11 @@ int	floatOrDouble(std::string str)
 	for (; i < str.length(); i++)
 	{
 		if (str[i] == '.')
+		{
+			if (!std::isdigit(str[i+1]))
+				return (-1);
 			point++;
+		}
 		else if (!std::isdigit(str[i]))
 		{
 			if (str[i] == 'f')
@@ -98,9 +103,9 @@ int	findType(std::string input)
 void	ScalarConverter::convert(std::string input)
 {
 	char	c = 'c';
-	// int		i = 0;
-	// float	f = 0.0f;
-	// double	d = 0.0;
+	int		i = 0;
+	float	f = 0.0f;
+	double	d = 0.0;
 
 	int type = findType(input);
 	switch (type)
@@ -117,16 +122,58 @@ void	ScalarConverter::convert(std::string input)
 			std::cout << "double: " << static_cast<double>(c) << std::endl;
 			break;
 		case 2: // int
-			std::cout << "ITS A INT" << std::endl;
+			i = atoi(input.c_str());
+			c = i;
+			if (std::isprint(i))
+				std::cout << "char: '" << c << "'" << std::endl;
+			else
+				std::cout << "char: Non displayable" << std::endl;
+			std::cout << "int: " << static_cast<int>(i) << std::endl;
+			std::cout << std::fixed << std::setprecision(1);
+			std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
+			std::cout << "double: " << static_cast<double>(i) << std::endl;
 			break;
 		case 3: // float
-			std::cout << "ITS A FLOAT" << std::endl;
+			f = atof(input.c_str());
+			i = f;
+			c = i;
+			if (std::isprint(i))
+				std::cout << "char: '" << c << "'" << std::endl;
+			else
+				std::cout << "char: Non displayable" << std::endl;
+			std::cout << "int: " << static_cast<int>(i) << std::endl;
+			if (!(f > i))
+				std::cout << std::fixed << std::setprecision(1);
+			std::cout << "float: " << static_cast<float>(f) << "f" << std::endl;
+			std::cout << "double: " << static_cast<double>(f) << std::endl;
 			break;
 		case 4: // double
-			std::cout << "ITS A DOUBLE" << std::endl;
+			d = strtod(input.c_str(), NULL);
+			i = d;
+			c = i;
+			if (std::isprint(i))
+				std::cout << "char: '" << c << "'" << std::endl;
+			else
+				std::cout << "char: Non displayable" << std::endl;
+			std::cout << "int: " << static_cast<int>(i) << std::endl;
+			if (!(d > i))
+				std::cout << std::fixed << std::setprecision(1);
+			std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+			std::cout << "double: " << static_cast<double>(d) << std::endl;
 			break;
 		case 5: // pseudoliteral
-			std::cout << "ITS A IDK" << std::endl;
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: impossible" << std::endl;
+			if (input == "-inff" || input == "+inff" || input == "nanf")
+			{
+				std::cout << "float: " << input << std::endl;
+				std::cout << "double: " << input.substr(0, input.length() - 1) << std::endl;
+			}
+			else
+			{
+				std::cout << "float: " << input + "f" << std::endl;
+				std::cout << "double: " << input << std::endl;
+			}
 			break;
 		default:
 			std::cout << "Invalid input" << std::endl;
