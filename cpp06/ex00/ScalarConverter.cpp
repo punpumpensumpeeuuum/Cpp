@@ -6,7 +6,7 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:09:52 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/10/23 16:31:01 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/10/23 17:28:31 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,11 @@ void	ScalarConverter::convert(std::string input)
 			break;
 		case 2: // int
 			i = atoi(input.c_str());
-			c = i;
-			if (std::isprint(i))
+			if (i >= 32 && i < 127)
+			{
+				c = i;				
 				std::cout << "char: '" << c << "'" << std::endl;
+			}
 			else
 				std::cout << "char: Non displayable" << std::endl;
 			std::cout << "int: " << static_cast<int>(i) << std::endl;
@@ -136,9 +138,11 @@ void	ScalarConverter::convert(std::string input)
 		case 3: // float
 			f = atof(input.c_str());
 			i = f;
-			c = i;
-			if (std::isprint(i))
+			if (i >= 32 && i < 127)
+			{
+				c = i;				
 				std::cout << "char: '" << c << "'" << std::endl;
+			}
 			else
 				std::cout << "char: Non displayable" << std::endl;
 			std::cout << "int: " << static_cast<int>(i) << std::endl;
@@ -150,9 +154,11 @@ void	ScalarConverter::convert(std::string input)
 		case 4: // double
 			d = strtod(input.c_str(), NULL);
 			i = d;
-			c = i;
-			if (std::isprint(i))
+			if (i >= 32 && i < 127)
+			{
+				c = i;				
 				std::cout << "char: '" << c << "'" << std::endl;
+			}
 			else
 				std::cout << "char: Non displayable" << std::endl;
 			std::cout << "int: " << static_cast<int>(i) << std::endl;
