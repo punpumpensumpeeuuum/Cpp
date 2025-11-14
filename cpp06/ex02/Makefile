@@ -1,5 +1,5 @@
-NAME = Conversionofscalartypes
-SRCS = main.cpp ScalarConverter.cpp
+NAME = Serialization
+SRCS = main.cpp Serialization.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++

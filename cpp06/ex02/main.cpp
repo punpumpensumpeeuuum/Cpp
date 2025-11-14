@@ -6,7 +6,7 @@
 /*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/11/13 01:33:07 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/11/13 02:01:17 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,5 @@
 
 int	main()
 {
-	Data data;
-
-	uintptr_t serialAddress = Serialization::serialize(&data);
-	Data* deserialAddress = Serialization::deserialize(serialAddress);
-
-	std::cout << "Decimal Notation:" << std::endl;
-	std::cout << "Serialization Address:   " << serialAddress << std::endl;
-	std::cout << "Deserialization Address: " << reinterpret_cast<uintptr_t>(deserialAddress) << std::endl;
-	std::cout << std::endl;
-	std::cout << "Hexadecimal Notation:" << std::endl;
-	std::cout << std::hex << "Serialization Address:   0x" << serialAddress << std::endl;
-	std::cout << "Deserialization Address: " << deserialAddress << std::endl;
-	return (0);
+	
 }

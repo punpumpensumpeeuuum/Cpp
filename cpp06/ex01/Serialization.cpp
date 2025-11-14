@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serialization.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:09:52 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/11/10 17:58:10 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/11/13 01:26:42 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,14 @@ Serialization	&Serialization::operator=(const Serialization &copy)
 }
 
 Serialization::~Serialization()
-{
+{}
 
-}
-
-Data*	Serialization::deserialize(uintprt_t raw)
+Data*	Serialization::deserialize(uintptr_t raw)
 {
-	return (NULL);
+	return (reinterpret_cast<Data*>(raw));
 }
 
 uintptr_t Serialization::serialize(Data* ptr)
 {
-	return (0);
+	return (reinterpret_cast<uintptr_t>(ptr));
 }

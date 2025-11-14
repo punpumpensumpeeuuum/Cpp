@@ -15,7 +15,8 @@
 
 # include <string>
 # include <iostream>
-# include <cstdint>
+
+typedef unsigned long uintptr_t;
 
 struct Data 
 {
