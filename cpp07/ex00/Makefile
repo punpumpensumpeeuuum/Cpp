@@ -1,5 +1,5 @@
-NAME = Identifyrealtype
-SRCS = main.cpp Base.cpp
+NAME = Conversionofscalartypes
+SRCS = main.cpp ScalarConverter.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++

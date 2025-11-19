@@ -1,17 +1,20 @@
 #ifndef BASE_H
 # define BASE_H
 
-# include <random>
 # include <iostream>
+# include <cstdlib>
+# include <typeinfo>
+# include <cmath>
 
 class Base
 {
 	public:
-		virtual ~Base();
-		Base*	generate(void);
-		void	identify(Base* p);
-		void	identify(Base& p);
+		virtual ~Base() = 0;
 };
+	
+Base*	generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
 
 class A : public Base
 {

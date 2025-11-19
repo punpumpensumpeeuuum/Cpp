@@ -6,19 +6,13 @@
 /*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/11/19 11:24:27 by dinda-si         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:39:19 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include ".hpp"
 
-int	main()
+int	main(int ac, char **av)
 {
-	std::srand(time(0));
 
-	Base *v = generate();
-	identify(v);
-	identify(*v);
-	delete v;
-	return 0;
 }
