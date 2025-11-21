@@ -1,4 +1,4 @@
-NAME = Startwithafewfunctions
+NAME = Iter
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 

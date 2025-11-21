@@ -1,4 +1,4 @@
-NAME = Startwithafewfunctions
+NAME = Array
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
