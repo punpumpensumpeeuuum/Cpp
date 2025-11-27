@@ -10,14 +10,13 @@ class Span
 {
 private:
 	unsigned int 		n;
-	std::vector<int>	s;
+	std::vector<int>	v;
 public:
 	Span(unsigned int i);
 	~Span();
 	void	addNumber(int num);
-	int		shortestSpan();
-	int		longestSpan();
-	
+	size_t	shortestSpan();
+	size_t	longestSpan();
 };
 
 #endif
