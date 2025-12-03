@@ -18,6 +18,7 @@ public:
 	Span();
 	Span(unsigned int i);
 	Span(const Span& s);
+	Span &operator=(const Span &s);
 	~Span();
 
 	void	addNumber(int num);

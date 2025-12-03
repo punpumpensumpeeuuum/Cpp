@@ -6,7 +6,7 @@
 /*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:47:45 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/11/29 22:28:05 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/12/03 00:36:18 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ Span::Span(const Span& s)
 {
 	*this = s;
 }
+
+Span	&Span::operator=( const Span &s )
+{
+	if (this != &s)
+	{
+		this->n = s.n;
+	}
+	return (*this);
+}
+
 
 Span::~Span()
 {
