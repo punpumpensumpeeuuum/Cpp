@@ -6,7 +6,7 @@
 /*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:47:45 by dinda-si          #+#    #+#             */
-/*   Updated: 2025/12/03 00:36:18 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/12/17 22:58:17 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ Span::Span(unsigned int i)
 	this->n = i;
 }
 
-Span::Span(const Span& s)
+Span::Span(const Span &s)
 {
 	*this = s;
 }
 
-Span	&Span::operator=( const Span &s )
+Span	&Span::operator=(const Span &s)
 {
 	if (this != &s)
 	{
@@ -35,7 +35,6 @@ Span	&Span::operator=( const Span &s )
 	}
 	return (*this);
 }
-
 
 Span::~Span()
 {
@@ -59,7 +58,7 @@ size_t	Span::shortestSpan()
 	size_t shortest = 1251251125152351252;
 	for (size_t i = 0; i < tv.size(); i++)
 	{
-        size_t small = tv[i + 1] - tv[i];
+		size_t small = tv[i + 1] - tv[i];
 		if (small < shortest)
 			shortest = small;
 	}

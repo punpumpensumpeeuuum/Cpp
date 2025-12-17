@@ -22,6 +22,15 @@ public:
 	~Span();
 
 	void	addNumber(int num);
+	template <typename T> 
+	void	addNumber(T start, T end)
+	{
+		unsigned int dst = static_cast<unsigned int>(std::distance(start, end));
+		if(dst == 0 || v.size() == n || \
+				(n == 0) || (n - v.size() < dst))
+			throw std::exception();
+		v.insert(this->v.end(), start, end);
+	}
 	size_t	shortestSpan();
 	size_t	longestSpan();
 };
