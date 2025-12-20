@@ -1,5 +1,5 @@
 NAME = MutantStack
-SRCS = main.cpp MutantStack.cpp
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
