@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/12/20 16:38:55 by buddy2           ###   ########.fr       */
+/*   Updated: 2025/12/22 19:31:23 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#ifndef RPN_H
+# define RPN_H 
 
-int main(int ac, char **av)
-{
-	RPN a;
-	if (ac < 2)
-	{
-		std::cerr << "Error\n";
-		exit(0);
-	}
-	a.Parsing(av[1]);
-}
+# include <iostream>
+# include <algorithm>
+# include <sys/time.h>
+# include <cstdlib>
+# include <climits>
+# include <iomanip>
+# include <vector>
+# include <deque>
+
+void	parseInput(int ac, char **av, std::vector<int> vector, std::deque<int> deque);
+
+
+#endif
