@@ -6,7 +6,7 @@
 /*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/12/22 19:12:28 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/06 18:58:52 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,19 @@ int	main(int ac, char **av)
 	}
 	try 
 	{
-		std::vector<int>    vector;
-        std::deque<int>     deque;
-        long long   startT;
-        long long   endT;
+		std::vector<int>	vector;
+		std::deque<int>		deque;
+		// long long	startT;
+		// long long	endT;	
 		
-		parseInput(ac - 1, av, vector, deque);
+		parseInput(ac, av, vector, deque);
+		
+		for (size_t i = 0; i < vector.size(); i++)
+		{
+			std::cout << deque[i] << " ";
+    		std::cout << vector[i] << " ";
+		}
+
 	}
 	catch (const std::exception &e)
 	{
