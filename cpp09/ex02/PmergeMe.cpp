@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2026/01/13 17:14:42 by dinda-si         ###   ########.fr       */
+/*   Updated: 2026/01/13 21:49:12 by buddy2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	sortVector(std::vector<int>& input)
 	
 	if (!sn.empty())
 	{
-		std::vector<int>	ord = order<std::vector<int>>(sn.size());
+		std::vector<int>	ord = order<std::vector<int> >(sn.size());
 		for (size_t i = 0; i < sn.size(); ++i)
 		{
 			int index = ord[i];
@@ -104,7 +104,7 @@ void	sortDeque(std::deque<int>& input)
 	
 	if (!sn.empty())
 	{
-		std::deque<int>	ord = order<std::deque<int>>(sn.size());
+		std::deque<int>	ord = order<std::deque<int> >(sn.size());
 		for (size_t i = 0; i < sn.size(); ++i)
 		{
 			int index = ord[i];
@@ -121,4 +121,17 @@ void	sortDeque(std::deque<int>& input)
 		sorted.insert(pos, leftover);
 	}
 	input = sorted;
+}
+
+long long	getTimeMicroseconds()
+{
+	struct timeval time;
+	gettimeofday(&time, NULL);
+	return (long long)(time.tv_sec) * 1000000 + time.tv_usec;
+}
+
+void	printTime(long long start, long long end, size_t size, std::string type)
+{
+	std::cout << std::fixed << std::setprecision(5);
+	std::cout << "Time to process a range of " << size << "  elements with std::" << type << " : " << static_cast<double>(end - start) << " us" << std::endl;
 }
