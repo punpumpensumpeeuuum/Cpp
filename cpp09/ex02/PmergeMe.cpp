@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2026/01/06 19:02:41 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/13 17:14:42 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,92 @@ void	parseInput(int ac, char **av, std::vector<int>& vector, std::deque<int>& de
 
 void	sortVector(std::vector<int>& input)
 {
+	if (input.size() <= 1)
+		return;
+
+	std::vector<int>	bn;
+	std::vector<int>	sn;
+
+	for (size_t i = 0; i < input.size() - 1; i += 2)
+	{
+		if (input[i] > input[i + 1])
+		{
+			bn.push_back(input[i]);
+			sn.push_back(input[i + 1]);
+		}
+		else
+		{
+			bn.push_back(input[i + 1]);
+			sn.push_back(input[i]);
+		}
+	}
+	sortVector(bn);
 	
+	std::vector<int>	sorted = bn;
+	
+	if (!sn.empty())
+	{
+		std::vector<int>	ord = order<std::vector<int>>(sn.size());
+		for (size_t i = 0; i < sn.size(); ++i)
+		{
+			int index = ord[i];
+			std::vector<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), sn[index]);
+			sorted.insert(pos, sn[index]);
+		}
+	}
+	int leftover = -1;
+	if (input.size() % 2 != 0)
+		leftover = input.back();
+	if (leftover != -1)
+	{
+		std::vector<int>::iterator  pos = std::lower_bound(sorted.begin(), sorted.end(), leftover);
+		sorted.insert(pos, leftover);
+	}
+	input = sorted;
+}
+
+void	sortDeque(std::deque<int>& input)
+{
+	if (input.size() <= 1)
+		return;
+
+	std::deque<int>	bn;
+	std::deque<int>	sn;
+
+	for (size_t i = 0; i < input.size() - 1; i += 2)
+	{
+		if (input[i] > input[i + 1])
+		{
+			bn.push_back(input[i]);
+			sn.push_back(input[i + 1]);
+		}
+		else
+		{
+			bn.push_back(input[i + 1]);
+			sn.push_back(input[i]);
+		}
+	}
+	sortDeque(bn);
+	
+	std::deque<int>	sorted = bn;
+	
+	if (!sn.empty())
+	{
+		std::deque<int>	ord = order<std::deque<int>>(sn.size());
+		for (size_t i = 0; i < sn.size(); ++i)
+		{
+			int index = ord[i];
+			std::deque<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), sn[index]);
+			sorted.insert(pos, sn[index]);
+		}
+	}
+	int leftover = -1;
+	if (input.size() % 2 != 0)
+		leftover = input.back();
+	if (leftover != -1)
+	{
+		std::deque<int>::iterator  pos = std::lower_bound(sorted.begin(), sorted.end(), leftover);
+		sorted.insert(pos, leftover);
+	}
+	input = sorted;
 }
