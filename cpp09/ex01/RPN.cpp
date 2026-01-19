@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/12/13 20:50:02 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/15 15:53:46 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int		RPN::Result(int n1, int n2, char o)
 			return (n1 * n2);
 		case '/':
 		{
-			if (n2 == 0)
-				std::cerr << "Invalid arguments" << std::endl;
+			if (n1 == 0)
+				std::cerr << "Invalid arguments";
 			return (n2 / n1);
 		}
 	}
@@ -53,32 +53,37 @@ int		RPN::Result(int n1, int n2, char o)
 
 void	RPN::Parsing(std::string input)
 {
-	std::string op = "+-*/";
-	int n, o = 0;
-	n = 0;
-	for (size_t i = 0; i < input.length(); i++)
+	std::stringstream ss(input);
+	std::string digit;
+
+	while (ss >> digit)
 	{
-		if (isdigit(input[i]))
+		char *end;
+		long value = std::strtol(digit.c_str(), &end, 10);
+
+		if (*end == '\0')
+			num.push(static_cast<int>(value));
+		else if (digit.size() == 1 && std::string("+-*/").find(digit[0]) != std::string::npos)
 		{
-			n++;
-			num.push(input[i] - 48);
+			if (num.size() < 2)
+			{
+				std::cerr << "Too many operators\n";
+				return;
+			}
+			int n1 = num.top(); num.pop();
+			int n2 = num.top(); num.pop();
+			num.push(Result(n1, n2, digit[0]));
 		}
-		else if (op.find(input[i]) != std::string::npos)
-		{
-			o++;
-			int c = num.top();
-			num.pop();
-			num.top() = Result(c, num.top(), input[i]);
-		}
-		else if (isspace(input[i]))
-			continue;
 		else
 		{
-			std::cerr << "Error" << std::endl;
+			std::cerr << "Error\n";
 			return;
 		}
 	}
-	if ((n - 1) != o)
-		std::cerr << "Wrong usage" << std::endl;
+	if (num.size() != 1)
+	{
+		std::cerr << "Wrong usage\n";
+		return;
+	}
 	std::cout << num.top() << std::endl;
 }

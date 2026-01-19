@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/12/13 19:44:54 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/15 15:26:29 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <stack>
 # include <cstdlib>
+# include <sstream>
 
 class RPN
 {

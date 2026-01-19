@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/12/09 23:54:46 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/19 18:09:11 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ void	BitcoinExchange::Input(std::string input)
 	std::string		strfile;
 
 	file.open(input.c_str());
+	std::getline(file, strfile);
+	if (strfile == "date | value")
+		std::getline(file, strfile);
 	while (!file.eof())
 	{
-		std::getline(file, strfile);
 		if (strfile.length() < 14)
 			std::cerr << "Wrong format" << std::endl;
 		std::string date = strfile.substr(0, 10);
@@ -75,6 +77,7 @@ void	BitcoinExchange::Input(std::string input)
 		cc >> value;
 		if (Parsing(date, value, strfile) == 0)
 			PrintOuput(date, value);
+		std::getline(file, strfile);
 	}
 	
 }

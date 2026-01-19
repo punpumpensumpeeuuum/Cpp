@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2025/12/20 16:38:55 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/15 15:31:17 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,12 @@ int main(int ac, char **av)
 		std::cerr << "Error\n";
 		exit(0);
 	}
-	a.Parsing(av[1]);
+	std::string input;
+	for (int i = 1; i < ac; i++)
+	{
+		input += av[i];
+		if (i + 1 < ac)
+			input += " ";
+	}
+	a.Parsing(input);
 }
