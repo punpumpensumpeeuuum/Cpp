@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: buddy2 <buddy2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dinda-si <dinda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:16:23 by buddy2            #+#    #+#             */
-/*   Updated: 2026/01/13 21:49:12 by buddy2           ###   ########.fr       */
+/*   Updated: 2026/01/22 19:48:23 by dinda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	parseInput(int ac, char **av, std::vector<int>& vector, std::deque<int>& de
 	{
 		long numb = std::strtol(av[i], &end, 10);
 		if (*end != '\0' || numb < 0 || numb > INT_MAX)
-			throw std::exception();
-		if (std::find(v.begin(), v.end(), numb) != v.end())
 			throw std::exception();
 		v.push_back(static_cast<int>(numb));
 		d.push_back(static_cast<int>(numb));
